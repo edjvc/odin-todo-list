@@ -134,9 +134,10 @@ li {
   background: #fff;
   padding: 8px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  max-width: 100%;
+  gap: 1rem;
 }
 
 li.fading-out {
@@ -153,7 +154,26 @@ li.fading-out {
   background-color: #e4e4e4;
 }
 
+#project-name {
+  min-width: 0;
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+#project-edit-btn {
+  margin-left: auto;
+}
+
+#project-select {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 #todo-list li {
+  justify-content: space-between;
   height: 60px;
   border-bottom: 1px solid #ccc;
 }
@@ -212,7 +232,7 @@ li.fading-out {
   }
 
   #modal-form textarea {
-    max-height: 4rem;
+    max-height: 8rem;
   }
 }
 
@@ -284,13 +304,12 @@ li.fading-out {
 .priority-group {
   display: flex;
   gap: 2rem;
-  padding: 1rem;
+  padding: 0.6rem;
   margin-bottom: 1.4rem;
 }
 
 .priority-group legend {
-  font-weight: bold;
-  margin-bottom: 0.2rem;
+  /* font-weight: bold; */
 }
 
 .priority-group label {
@@ -350,21 +369,19 @@ li.fading-out {
   color: rgba(255, 0, 0, 0.7);
 }
 
-.left-part {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .todo-content {
-  /* flex: 1; */
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .todo-title {
   font-size: 1.8rem;
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .todo-desc {
@@ -373,6 +390,7 @@ li.fading-out {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .todo-delete-btn,
@@ -397,7 +415,7 @@ li.fading-out {
   background-color: rgb(241, 85, 85);
 }
 
-#toggle-completed {
-  position: absolute;
-  right: 16px;
+#toggle-completed,
+.todo-delete-btn {
+  margin-left: auto;
 }

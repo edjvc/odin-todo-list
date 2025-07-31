@@ -61,20 +61,21 @@ const DOMController = {
     const list = document.querySelector('#project-list');
     list.innerHTML = '';
     projects.forEach((p) => {
+      const projectName = document.createElement('p');
       const li = document.createElement('li');
       const editBtn = document.createElement('button');
 
-      li.textContent = p.name;
+      projectName.textContent = p.name;
       li.dataset.id = p.id;
       if (p.id === activeId) {
-        li.style.fontWeight = 'bold';
-        // li.style.border = '2px solid grey';
-        // li.style.boxShadow = '2px 2px 2px #ccc';
+        projectName.style.fontWeight = 'bold';
         li.style.backgroundColor = 'rgba(171, 233, 163, 0.3)';
       }
 
+      projectName.id = 'project-name';
       editBtn.textContent = 'edit';
       editBtn.id = 'project-edit-btn';
+      li.appendChild(projectName);
       li.appendChild(editBtn);
       list.appendChild(li);
     });
@@ -88,12 +89,10 @@ const DOMController = {
       li.dataset.id = t.id;
       li.classList.add(`priority-${t.priority}`);
       li.innerHTML = `
-        <div class="left-part">  
-          <button class="complete-btn">${t.completed ? 'Restore' : 'Done'}</button>
-          <div class="todo-content">
-            <div class="todo-title">${t.title}</div>
-            <div class="todo-desc">${t.description}</div>
-          </div>
+        <button class="complete-btn">${t.completed ? 'Restore' : 'Done'}</button>
+        <div class="todo-content">
+          <div class="todo-title">${t.title}</div>
+          <div class="todo-desc">${t.description}</div>
         </div>
         <button class="todo-delete-btn">Delete</button>
       `;
