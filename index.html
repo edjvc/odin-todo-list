@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <script type="module" crossorigin src="/odin-todo-list/assets/index-DldjLfFO.js"></script>
+  <link rel="stylesheet" crossorigin href="/odin-todo-list/assets/index-BghIe18A.css">
+</head>
+
+<body>
+  <header>
+    <button id="toggle-sidebar" aria-label="Toggle sidebar">☰</button>
+    <h1>- TODO APP -</h1>
+    <div class="fill"></div>
+  </header>
+  <main>
+    <aside>
+      <div id="project-section-title">
+        <h2>Projects</h2>
+        <button id="add-project">➕</button>
+      </div>
+      <ul id="project-list"></ul>
+    </aside>
+    <section>
+      <div id="todo-section-title">
+        <h2 id="task-header">Todos</h2>
+        <button id="add-todo">➕</button>
+        <button id="delete-all-completed-btn" class="hidden">Delete All</button>
+        <button id="toggle-completed">Completed Tasks</button>
+      </div>
+      <ul id="todo-list"></ul>
+    </section>
+  </main>
+
+  <div id="modal-overlay" class="hidden">
+    <div id="modal">
+      <div class="header">
+        <h2 id="modal-title"></h2>
+        <button id="delete-project-btn" class="hidden">Delete Project</button>
+      </div>
+      <form id="modal-form">
+        <div class="form-group">
+          <label for="modal-input-title">Title:</label>
+          <input type="text" id="modal-input-title" name="title" required />
+        </div>
+
+        <div class="form-group hidden" id="modal-description-wrapper">
+          <label for="modal-input-desc">Description:</label>
+          <textarea id="modal-input-desc" name="description"></textarea>
+        </div>
+
+        <fieldset class="priority-group hidden">
+          <legend>Priority</legend>
+          <label><input type="radio" name="priority" value="low" checked /> Low</label>
+          <label><input type="radio" name="priority" value="mid" /> Mid</label>
+          <label><input type="radio" name="priority" value="high" /> High</label>
+        </fieldset>
+
+        <div class="project-select hidden" id="move-to-project">
+          <label for="project-select">Select Project:</label>
+          <select id="project-select" name="project">
+            <option value="test1">
+          </select>
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit">Save</button>
+          <button type="button" id="modal-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
