@@ -205,12 +205,14 @@ li.fading-out {
   }
 
   #modal {
-    max-height: 58%;
+    max-height: 46%;
     min-width: 80%;
+    position: absolute;
+    top: 2vh;
   }
 
   #modal-form textarea {
-    max-height: 14rem;
+    max-height: 4rem;
   }
 }
 
@@ -231,11 +233,13 @@ li.fading-out {
 
 /* ===== Modal Container ===== */
 #modal {
+  display: flex;
+  flex-direction: column;
   background: #fff;
   /* border-radius: 8px; */
   padding: 2rem;
-  width: 30%;
-  height: 70%;
+  width: 24%;
+  max-height: 62%;
   max-width: 600px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   overflow: auto;
@@ -289,8 +293,7 @@ li.fading-out {
 /* ===== Priority Group ===== */
 .priority-group {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  gap: 2rem;
 }
 
 .priority-group legend {
