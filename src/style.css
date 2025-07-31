@@ -237,7 +237,7 @@ li.fading-out {
   flex-direction: column;
   background: #fff;
   /* border-radius: 8px; */
-  padding: 2rem;
+  padding: 1.4rem 2rem;
   width: 24%;
   max-height: 62%;
   max-width: 600px;
@@ -258,12 +258,6 @@ li.fading-out {
 }
 
 /* ===== Form Styles ===== */
-#modal-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
 #modal-form input[type="text"],
 #modal-form textarea {
   width: 100%;
@@ -282,10 +276,6 @@ li.fading-out {
   height: 32rem;
 }
 
-#modal-form fieldset {
-  padding: 0.5rem;
-}
-
 #modal-form textarea {
   resize: vertical;
 }
@@ -294,6 +284,8 @@ li.fading-out {
 .priority-group {
   display: flex;
   gap: 2rem;
+  padding: 1rem;
+  margin-bottom: 1.4rem;
 }
 
 .priority-group legend {
@@ -320,6 +312,7 @@ li.fading-out {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
+  margin-top: 1.4rem;
 }
 
 .modal-actions button {
