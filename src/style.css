@@ -156,9 +156,10 @@ li.fading-out {
 
 #project-name {
   min-width: 0;
-  /* white-space: nowrap;
+  max-width: 100%;
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; */
+  text-overflow: ellipsis;
 }
 
 #project-edit-btn {
