@@ -9,7 +9,7 @@
 }
 
 :root {
-  --theme-color-1: #bbf17d;
+  --theme-color-1: #76be17;
   --theme-color-2: #EFEEEA;
   --theme-color-3: #273F4F;
   /* --light-text: #777777; */
@@ -59,3 +59,349 @@ td {
   text-align: left;
   padding: 0.5em;
 } */
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  padding-right: 32.53px;
+}
+
+main {
+  display: flex;
+  position: relative;
+  /* gap: 1rem; */
+}
+
+aside {
+  background: #f3f3f3;
+  border: 1px solid #ddd;
+  /* border-radius: 8px 0 0 8px; */
+  padding: 2rem 1rem;
+  width: 20%;
+  min-width: 240px;
+  min-height: 100px;
+  transition: transform 0.3s ease;
+  height: calc(100vh - 100px);
+}
+
+section {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  /* border-radius: 0 8px 8px 0; */
+  min-width: 150px;
+  min-height: 100px;
+  height: calc(100vh - 100px);
+  position: relative;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--theme-color-1);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+header button {
+  background-color: #ddd;
+}
+
+ul {
+  list-style: none;
+  margin-top: 1rem;
+  height: calc(100% - 50px);
+  overflow-y: auto;
+}
+
+li {
+  background: #fff;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+li.fading-out {
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+#project-list li {
+  background-color: rgba(204, 204, 204, 0);
+  padding: 10px 12px;
+}
+
+#project-list li:hover {
+  background-color: #e4e4e4;
+}
+
+#todo-list li {
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+}
+
+#todo-list li:hover {
+  background-color: #f3f3f3;
+}
+
+#todo-list li:first-child {
+  border-top: 1px solid #ccc;
+}
+
+.priority-group {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.priority-group legend {
+  font-weight: bold;
+}
+
+.priority-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+    transform: translateX(-124%);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  aside.open {
+    transform: translateX(0);
+  }
+
+  section {
+    flex: 1;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  #modal {
+    max-height: 58%;
+    min-width: 80%;
+  }
+
+  #modal-form textarea {
+    max-height: 14rem;
+  }
+}
+
+/* ===== Modal Overlay ===== */
+#modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#modal-overlay.hidden {
+  display: none;
+}
+
+/* ===== Modal Container ===== */
+#modal {
+  background: #fff;
+  /* border-radius: 8px; */
+  padding: 2rem;
+  width: 30%;
+  height: 70%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+}
+
+#modal .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ===== Modal Title ===== */
+#modal-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* ===== Form Styles ===== */
+#modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+#modal-form input[type="text"],
+#modal-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#modal-form input[type="text"] {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+#modal-form textarea {
+  height: 32rem;
+}
+
+#modal-form fieldset {
+  padding: 0.5rem;
+}
+
+#modal-form textarea {
+  resize: vertical;
+}
+
+/* ===== Priority Group ===== */
+.priority-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.priority-group legend {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.priority-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.3rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Action Buttons ===== */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.modal-actions button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-actions button[type="submit"] {
+  background: var(--theme-color-1);
+  color: #fff;
+}
+
+.modal-actions button#modal-cancel {
+  background: #ccc;
+  color: #333;
+}
+
+.modal-actions button:hover {
+  opacity: 0.85;
+}
+
+/* ===== Utility ===== */
+.hidden {
+  display: none !important;
+}
+
+.priority-mid {
+  color: rgba(255, 166, 0, 0.9);
+}
+
+.priority-high {
+  color: rgba(255, 0, 0, 0.7);
+}
+
+.left-part {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-content {
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.todo-desc {
+  font-size: 1.4rem;
+  color: #777777;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.todo-delete-btn,
+#delete-project-btn {
+  background-color: rgb(241, 85, 85);
+}
+
+.complete-btn,
+.todo-delete-btn {
+  height: 28px;
+}
+
+#project-section-title,
+#todo-section-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 3rem;
+}
+
+#delete-all-completed-btn {
+  background-color: rgb(241, 85, 85);
+}
+
+#toggle-completed {
+  position: absolute;
+  right: 16px;
+}
