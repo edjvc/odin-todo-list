@@ -7,7 +7,7 @@ import DOMController from './DOMController.js';
 const appController = {
   init() {
     const data = storageController.load();
-    if (data.projects[0]) {
+    if (data?.projects?.length > 0) {
       // console.log('data:', data.projects[0]);
       viewState.load(data.viewState);
       projectManager.load(data.projects);
